@@ -22,5 +22,6 @@ namespace proton
   static constexpr auto MAX_PROCESS       = 5;
   static constexpr auto ASSET_RAM_COST_BYTES = 151;
   static constexpr auto XPR_COST_PER_BYTE = 222;
-  static constexpr auto FREE_RAM = ASSET_RAM_COST_BYTES * 10;
+  static constexpr auto FREE_NFTS = 10;
+  static constexpr auto FREE_RAM = ASSET_RAM_COST_BYTES * FREE_NFTS;
 } // namespace proton

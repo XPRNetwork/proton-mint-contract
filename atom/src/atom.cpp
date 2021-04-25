@@ -89,7 +89,7 @@ namespace proton
     auto resource = _resources.find(creator.value);
     check(resource != _resources.end(), "resource balance not found");
     uint64_t ram_cost = count * ASSET_RAM_COST_BYTES;
-    check(resource->ram_bytes > ram_cost, "Need more blockchain storage. Current: " + to_string(resource->ram_bytes) + " bytes, Required: " + to_string(ram_cost) + " bytes");
+    check(resource->ram_bytes >= ram_cost, "Need more blockchain storage. Current: " + to_string(resource->ram_bytes) + " bytes, Required: " + to_string(ram_cost) + " bytes");
 
     _resources.modify(resource, same_payer, [&](auto& r) {
       r.ram_bytes -= ram_cost;
