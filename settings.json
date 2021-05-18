@@ -1,8 +1,8 @@
 {
     "currentNetwork": {
-        "chain": "proton",
+        "chain": "proton-test",
         "endpoints": [
-            "https://proton.greymass.com"
+            "https://protontestnet.greymass.com"
         ]
     }
 }
