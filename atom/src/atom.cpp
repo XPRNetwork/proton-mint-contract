@@ -42,7 +42,9 @@ namespace proton
 
     // Determine RAM receiver
     check(memo == "account" || memo == "contract", "memo must be 'account' or 'contract'");
-    name ram_receiver = memo == "account" ? from : get_self();
+    name ram_receiver = memo == "account"
+      ? from
+      : get_self();
 
     // Buy the RAM
     buyram_action br_action( SYSTEM_CONTRACT, {get_self(), "active"_n} );
