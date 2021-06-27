@@ -37,7 +37,10 @@ namespace proton
     t_action.send(get_self(), swap::PROTONSWAP_ACCOUNT, quantity, XPRXUSDC_SYMBOL.code().to_string() + "," + to_string(swap_out.amount * 99 / 100)); // 1% slippage max
 
     // Calculate RAM bytes
-    asset ram_cost = asset(XPR_COST_PER_BYTE, XPR_SYMBOL);
+    global_stateram_singleton globalram("eosio"_n, "eosio"_n.value);
+    eosio_global_stateram _gstateram = globalram.exists() ? globalram.get() : eosio_global_stateram{};
+    
+    asset ram_cost = _gstateram.ram_price_per_byte;
     uint64_t ram_bytes = swap_out.amount / ram_cost.amount;
 
     // Determine RAM receiver
