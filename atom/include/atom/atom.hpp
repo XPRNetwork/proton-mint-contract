@@ -8,6 +8,7 @@
 #include <eosio/asset.hpp>
 #include <eosio/crypto.hpp>
 #include <eosio/transaction.hpp>
+#include <eosio/singleton.hpp>
 
 // Local
 #include "atomicassets.hpp"
