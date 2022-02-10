@@ -69,7 +69,6 @@ namespace proton
     require_auth(account);
 
     auto resource = _resources.find(account.value);
-    check(resource == _resources.end(), "storage already exists for this account");
 
     if (resource == _resources.end()) {
       _resources.emplace(get_self(), [&](auto& r) {
